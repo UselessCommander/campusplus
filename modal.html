@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <!-- Grundlæggende metadata for sprog, tegnsæt, viewport og SEO -->
+    <meta charset="UTF-8"> <!-- Sæt tegnsæt til UTF-8 for at understøtte danske bogstaver -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <!-- Gør siden responsiv til mobil -->
+    <meta name="robots" content="noindex, nofollow"> <!-- Forhindrer søgemaskiner i at indeksere siden -->
+
+
+    <!-- Titel, CSS-styling og reset-styles for at sikre ensartethed på tværs af browsere -->
+    <title>Campus+ Tilmelding</title> <!-- Titel på siden -->
+    <link rel="stylesheet" href="/assets/css/reset.css"> <!-- Nulstil styling -->
+    <link rel="stylesheet" href="/assets/css/styles.css"> <!-- Egen styles-fil til design og layout -->
+
+    <!-- Hoved JavaScript-fil og adgangskontrol -->
+    <script src="/assets/js/main.js" defer></script> <!-- Primær logik til tilmeldingssiden -->
+
+</head>
+<body>
+    <div id="heatmap-container">
+        <!-- Denne sektion indeholder hele hovedlayoutet for tilmeldingssiden -->
+        <main>
+            <!-- Viser brugeren, hvor de er i tilmeldingsforløbet -->
+            <div class="progress-bar">
+                <div class="step active animate" data-step="0"></div>
+                <div class="line"></div>
+                <div class="step" data-step="1"></div>
+                <div class="line"></div>
+                <div class="step" data-step="2"></div>
+                <div class="line"></div>
+                <div class="step" data-step="3"></div>
+                <div class="line"></div>
+                <div class="step" data-step="4"></div>
+                <div class="line"></div>
+                <div class="step" data-step="5"></div>
+                <div class="line"></div>
+                <div class="step" data-step="6"></div>
+                <div class="line"></div>
+                <div class="step" data-step="7"></div>
+            </div>
+            
+             <!-- Alle de modaler der bruges til at tilmelde og vælge præferencer -->
+            <div class="container">
+                <!-- Formular til at indtaste personoplysninger -->
+                <div class="modal active" id="modal-1">
+                    <button class="back-btn" onclick="window.location.href='index.html'">
+                        <img src="/assets/icons/back-btn.svg" alt="Tilbage">
+                    </button>
+                    
+                    <h2>Tilmelding</h2>
+                    <form>
+                        <input type="text" name="fullName" placeholder="Fulde navn" required>
+                        <input type="email" name="email" placeholder="E-mail" required>
+                        <input type="tel" name="tel" placeholder="Telefon nummer">
+                        <input type="password" name="password" placeholder="Adgangskode" required>
+                    </form>
+                    
+                    <hr class="divider">  <!-- Skillelinje -->
+                    <p>Eller opret med:</p>  <!-- Alternativ tilmelding -->
+                    <div class="social-login">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"/><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"/></svg></a>
+                    </div>
+                    
+                </div>
+                
+                <!-- Modal 2 -->
+                 <!-- Brugeren vælger deres organisationstype -->
+                <div class="modal" id="modal-2">
+                    <button class="back-btn" >
+                        <img src="/assets/icons/back-btn.svg" alt="Tilbage">
+                    </button>
+                    <h2>Organisationstype</h2>
+                    <form>
+                         <!-- Valg af organisationstype -->
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="radio" name="organization-type" value="virksomhed">
+                                <span>Virksomhed</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="organization-type" value="skole">
+                                <span>Skole</span>
+                            </label>
+                        </div>
+                        
+                        <input type="text" placeholder="Navn på stedet" class="place-name" required>
+                    </form>
+                    <div class="icon-group">
+                        <img src="/assets/images/bygninger.png" alt="Bygning">
+                        
+                    </div>
+                </div>
+                
+                <!-- Brugeren vælger, om de vil have kaffe -->
+                <div class="modal" id="modal-kaffebillet">
+                    <button class="back-btn">
+                        <img src="/assets/icons/back-btn.svg" alt="Tilbage">
+                    </button>
+                    <h2>Vil du have kaffe?</h2>
+                    <div class="icon-container">
+                        <img src="/assets/images/kaffe.png" alt="Mad billede">
+                    </div>
+                    <p>25 DKK <br>*Gratis for frivillige</p>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="kaffe" value="reject">
+                            <span class="radio-label reject">
+                                <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2002 0.831909L21.0002 20.1519M40.8002 39.4719L21.0002 20.1519M21.0002 20.1519L40.8002 0.831909L1.2002 39.4719" stroke="#EA4335" stroke-width="2"/>
+                                </svg>
+                                    
+                            </span>
+                        </label>
+                        <label>
+                            <input type="radio" name="kaffe" value="accept">
+                            <span class="radio-label accept">
+                                <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2915 24.6206L13.8067 39.8661L40.6248 0.905273" stroke="#34A853" stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Brugeren vælger, om de vil have frokost -->
+                <div class="modal" id="modal-madbillet">
+                    <button class="back-btn">
+                        <img src="/assets/icons/back-btn.svg" alt="Tilbage">
+                    </button>
+                    <h2>Vil du have frokost?</h2>
+                    <div class="icon-container">
+                        <img class="mad" src="/assets/images/mad.png" alt="Mad billede">
+                    </div>
+                    <p>25 DKK <br>*Gratis for frivillige</p>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="mad" value="reject">
+                            <span class="radio-label reject">
+                                <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2002 0.831909L21.0002 20.1519M40.8002 39.4719L21.0002 20.1519M21.0002 20.1519L40.8002 0.831909L1.2002 39.4719" stroke="#EA4335" stroke-width="2"/>
+                                </svg>
+                                    
+                            </span>
+                        </label>
+                        <label>
+                            <input type="radio" name="mad" value="accept">
+                            <span class="radio-label accept">
+                                <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2915 24.6206L13.8067 39.8661L40.6248 0.905273" stroke="#34A853" stroke-width="2"/>
+                                </svg>
+                                    
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="modal" id="modal-fordrag">
+
+                    <!-- Tilbage-knap -->
+                    <!-- Knap, der fører brugeren tilbage til den forrige sektion -->
+                    <button class="back-btn">
+                        <img src="/assets/icons/back-btn.svg" alt="Tilbage">
+                    </button>
+                
+                    <!-- Modal-overskrift -->
+                    <h2>Foredrag</h2>
+                
+                    <!-- Carousel til foredrag -->
+                    <!-- En roterbar liste af foredragskort, som brugeren kan navigere igennem -->
+                    <div class="carousel" data-carousel-id="fordrag">
+                
+                        <!-- Foredragskort 1: Sygeplejersken -->
+                        <div class="carousel-item active" data-index="0">
+                            <div class="card" data-index="0">
+                                <div class="card-inner">
+                                    <!-- Forsiden af kortet -->
+                                    <div class="card-front">
+                                        <img src="/assets/images/sygeplejerske.png" alt="Sygeplejerske Foredrag">
+                                        <div class="desc">
+                                            <h2>Sygeplejersken</h2>
+                                            <!-- Ikon/cirkelgrafik -->
+                                            <svg width="24" height="24" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="20.5" cy="22.5" r="19" stroke="#638C3E" stroke-width="3"/>
+                                                <circle cx="20.5" cy="12.5" r="2.5" fill="#638C3E"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Bagsiden af kortet -->
+                                    <div class="card-back">
+                                        <p>Sygeplejersken Foredrag: Introduktion til arbejdet som sygeplejerske.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Foredragskort 2: Politi -->
+                        <div class="carousel-item" data-index="1">
+                            <div class="card" data-index="1">
+                                <div class="card-inner">
+                                    <!-- Forsiden af kortet -->
+                                    <div class="card-front">
+                                        <img src="/assets/images/politihat.png" alt="Politi Foredrag">
+                                        <div class="desc">
+                                            <h2>Politi</h2>
+                                            <!-- Ikon/cirkelgrafik -->
+                                            <svg width="24" height="24" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="20.5" cy="22.5" r="19" stroke="#638C3E" stroke-width="3"/>
+                                                <circle cx="20.5" cy="12.5" r="2.5" fill="#638C3E"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Bagsiden af kortet -->
+                                    <div class="card-back">
+                                        <p>Politi Foredrag: En dag i politiets liv.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Foredragskort 3: Landbrug -->
+                        <div class="carousel-item" data-index="2">
+                            <div class="card" data-index="2">
+                                <div class="card-inner">
+                                    <!-- Forsiden af kortet -->
+                                    <div class="card-front">
+                                        <img src="/assets/images/farm.png" alt="Landbrug Foredrag">
+                                        <div class="desc">
+                                            <h2>Landbrug</h2>
+                                            <!-- Ikon/cirkelgrafik -->
+                                            <svg width="24" height="24" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="20.5" cy="22.5" r="19" stroke="#638C3E" stroke-width="3"/>
+                                                <circle cx="20.5" cy="12.5" r="2.5" fill="#638C3E"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Bagsiden af kortet -->
+                                    <div class="card-back">
+                                        <p>Her mødes store maskiner og grønt landbrug. En spændende oplevelse, hvor du lærer om landbrugets udvikling og traktorernes betydning for gården.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div> <!-- Slut på carousel -->
+                
+                    <!-- Navigationsknapper -->
+                    <!-- Knapper til at navigere gennem carousel-elementerne -->
+                    <div class="carousel-controls">
+                        <button class="prev-carousel-btn" data-carousel-id="fordrag">&larr;</button> <!-- Forrige knap -->
+                        <button class="next-carousel-btn" data-carousel-id="fordrag">&rarr;</button> <!-- Næste knap -->
+                    </div>
+                
+                    <!-- Valg af foredrag -->
+                    <!-- Radio-knapper til at acceptere eller afvise foredrag -->
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="choice" value="reject">
+                            <span class="radio-label reject">
+                                <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2002 0.831909L21.0002 20.1519M40.8002 39.4719L21.0002 20.1519M21.0002 20.1519L40.8002 0.831909L1.2002 39.4719" stroke="#EA4335" stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </label>
+                        <label>
+                            <input type="radio" name="choice" value="accept">
+                            <span class="radio-label accept">
+                                <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2915 24.6206L13.8067 39.8661L40.6248 0.905273" stroke="#34A853" stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </label>
+                    </div>
+                
+                </div> <!-- Slut på modal -->
+                
+                
+        
+        
+                <!-- Brugeren vælger sin rolle -->
+                <div class="modal" id="modal-rolle">
+                    <button class="back-btn">
+                        <img src="/assets/icons/back-btn.svg" alt="Tilbage">
+                    </button>
+                    <h2>Hvilken rolle er du?</h2>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="radio" name="rolle-type" value="frivillig">
+                            <span>Frivillig</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="rolle-type" value="leder">
+                            <span>Leder</span>
+                        </label>
+                        <label> 
+                            <input type="radio" name="rolle-type" value="guest">
+                            <span>Ekstern gæst</span>
+                        </label>
+                    </div>
+                    <div class="icon-group">
+                        <img src="/assets/images/Person.png" alt="nonidentifiable person">
+                        
+                    </div>
+                </div>
+                <div class="modal" id="modal-opgaver">
+
+                    <!-- Tilbage-knap -->
+                    <!-- Knap til at gå tilbage til den forrige skærm -->
+                    <button class="back-btn">
+                        <img src="/assets/icons/back-btn.svg" alt="Tilbage">
+                    </button>
+                
+                    <!-- Modal-overskrift -->
+                    <!-- Titel for denne modal, der angiver, at brugeren skal vælge opgaver -->
+                    <h2>Opgaver</h2>
+                
+                    <!-- Carousel til opgaver -->
+                    <!-- En roterbar liste af opgavekort, som brugeren kan navigere igennem -->
+                    <div class="carousel" data-carousel-id="opgaver">
+                
+                        <!-- Opgave 1: Opsætning -->
+                        <div class="carousel-item active" data-index="0">
+                            <div class="card">
+                                <div class="card-inner">
+                                    <!-- Forsiden af kortet -->
+                                    <div class="card-front">
+                                        <!-- Billede der repræsenterer opgaven -->
+                                        <img src="/assets/images/Hammerslag.png" alt="Opsætning">
+                                        <div class="desc">
+                                            <!-- Titel på opgaven -->
+                                            <h2>Opsætning</h2>
+                                            <!-- Grafisk ikon -->
+                                            <svg width="24" height="24" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="20.5" cy="22.5" r="19" stroke="#638C3E" stroke-width="3"/>
+                                                <circle cx="20.5" cy="12.5" r="2.5" fill="#638C3E"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Bagsiden af kortet -->
+                                    <div class="card-back">
+                                        <p>Hjælpe til med at stille ting op</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Opgave 2: Sociale Medier -->
+                        <div class="carousel-item active" data-index="1">
+                            <div class="card">
+                                <div class="card-inner">
+                                    <!-- Forsiden af kortet -->
+                                    <div class="card-front">
+                                        <!-- Billede der repræsenterer opgaven -->
+                                        <img src="/assets/images/kontakt.png" alt="Sociale Medier">
+                                        <div class="desc">
+                                            <!-- Titel på opgaven -->
+                                            <h2>Sociale medier</h2>
+                                            <!-- Grafisk ikon -->
+                                            <svg width="24" height="24" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="20.5" cy="22.5" r="19" stroke="#638C3E" stroke-width="3"/>
+                                                <circle cx="20.5" cy="12.5" r="2.5" fill="#638C3E"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Bagsiden af kortet -->
+                                    <div class="card-back">
+                                        <p>Står for sociale medie content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Opgave 3: Oprydning -->
+                        <div class="carousel-item active" data-index="2">
+                            <div class="card">
+                                <div class="card-inner">
+                                    <!-- Forsiden af kortet -->
+                                    <div class="card-front">
+                                        <!-- Billede der repræsenterer opgaven -->
+                                        <img src="/assets/images/Trash can.png" alt="Oprydning">
+                                        <div class="desc">
+                                            <!-- Titel på opgaven -->
+                                            <h2>Oprydning</h2>
+                                            <!-- Grafisk ikon -->
+                                            <svg width="24" height="24" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="20.5" cy="22.5" r="19" stroke="#638C3E" stroke-width="3"/>
+                                                <circle cx="20.5" cy="12.5" r="2.5" fill="#638C3E"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Bagsiden af kortet -->
+                                    <div class="card-back">
+                                        <p>Rydde op i mens og efter eventet.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div> <!-- Slut på carousel -->
+                
+                    <!-- Navigationsknapper -->
+                    <!-- Knapper til at navigere frem og tilbage i opgavelisten -->
+                    <div class="carousel-controls">
+                        <button class="prev-carousel-btn">&larr;</button> <!-- Forrige knap -->
+                        <button class="next-carousel-btn">&rarr;</button> <!-- Næste knap -->
+                    </div>
+                
+                    <!-- Valgmuligheder for opgaver -->
+                    <!-- Radio-knapper, der giver brugeren mulighed for at acceptere eller afvise opgaven -->
+                    <div class="radio-group">
+                        <!-- Knappen til at afvise opgaven -->
+                        <label>
+                            <input type="radio" name="choice" value="reject">
+                            <span class="radio-label reject">
+                                <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2002 0.831909L21.0002 20.1519M40.8002 39.4719L21.0002 20.1519M21.0002 20.1519L40.8002 0.831909L1.2002 39.4719" stroke="#EA4335" stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </label>
+                        <!-- Knappen til at acceptere opgaven -->
+                        <label>
+                            <input type="radio" name="choice" value="accept">
+                            <span class="radio-label accept">
+                                <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2915 24.6206L13.8067 39.8661L40.6248 0.905273" stroke="#34A853" stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </label>
+                    </div>
+                
+                </div> <!-- Slut på modal -->
+                
+                
+                    
+                    
+                </div>
+                <!-- MODAL 6: BEKRÆFTELSE -->
+                <div class="modal order-confirmation" id="modal-confirmation">
+
+                    <!-- Tilbage-knap -->
+                    <button class="back-btn">
+                        <img src="/assets/icons/back-btn.svg" alt="Tilbage">
+                    </button>
+
+                    <!-- Formular til at vise ordrebekræftelse -->
+                    <form>
+
+                        <!-- Titel for bekræftelsessiden -->
+                        <h2>Ordrebekræftelse</h2>
+
+                        <!-- Indhold, der viser brugerens oplysninger -->
+                        <div class="confirmation-content">
+                            <span id="confirmation-name"></span> <!-- Brugerens navn -->
+                            <span id="confirmation-email"></span> <!-- Brugerens e-mail -->
+                            <span id="confirmation-phone"></span> <!-- Brugerens telefonnummer -->
+                            <span id="confirmation-organization"></span> <!-- Organisationens navn -->
+                            <span id="confirmation-place"></span> <!-- Stedet brugeren har angivet -->
+                            <span id="confirmation-role"></span> <!-- Brugerens valgte rolle -->
+                            <span id="confirmation-foredrag"></span> <!-- Valgte foredrag -->
+                            <hr> <!-- Adskillende linje -->
+
+                            <!-- Kuponer for mad og kaffe -->
+                            <div class="kupon-container">
+
+                                <!-- Madkupon -->
+                                <div class="kupon-item mad-kupon">
+                                    <img src="/assets/images/mad.png" alt="Mad kupon">
+                                    <p>Mad kupon</p>
+                                    <p id="confirmation-mad-price">0,00 DKK</p> <!-- Pris for madkupon -->
+                                </div>
+
+                                <!-- Kaffekupon -->
+                                <div class="kupon-item kaffe-kupon">
+                                    <img src="/assets/images/kaffe.png" alt="Kaffe kupon">
+                                    <p>Kaffe kupon</p>
+                                    <p id="confirmation-kaffe-price">0,00 DKK</p> <!-- Pris for kaffekupon -->
+                                </div>
+
+                            </div> <!-- Slut på kupon-container -->
+                        </div> <!-- Slut på confirmation-content -->
+
+                        <!-- Total pris for alle valg -->
+                        <div class="total">
+                            <strong id="confirmation-total">GRATIS</strong> <!-- Viser den samlede pris -->
+                        </div>
+
+                    </form> <!-- Slut på formular -->
+
+                </div> <!-- Slut på modal -->
+
+
+            <!-- Næste-knap -->
+            <button type="button" class="next-btn" data-next="modal-2">Næste</button>
+        </main>
+    </div>
+</body>
+</html>

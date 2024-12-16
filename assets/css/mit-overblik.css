@@ -1,0 +1,319 @@
+body {
+    background-color: #f9f9f9; /* Baggrundsfarve for hele siden (lys grå) */
+    margin: 0; /* Fjerner standard margin for body */
+    padding: 5%; /* Indvendig polstring på 5% af bodyens bredde */
+    display: flex; /* Bruger flexbox layout til at centrere indholdet */
+    justify-content: center; /* Centrerer indholdet vandret */
+    align-items: center; /* Centrerer indholdet lodret */
+    flex-direction: column; /* Placerer børnene (child elements) i en kolonne */
+}
+
+main {
+    display: flex; /* Bruger flexbox layout til at centrere indholdet */
+    flex-direction: column; /* Indholdet placeres i en kolonne */
+    justify-content: center; /* Centrerer indholdet lodret i containeren */
+    align-items: center; /* Centrerer indholdet vandret i containeren */
+    gap: 1.5rem; /* Afstand på 1.5rem mellem børnene i kolonnen */
+}
+
+main .title {
+    margin: 1.5rem; /* Plads rundt om titlen */
+    font-size: 1.5rem; /* Gør teksten større (24px, hvis standard er 16px) */
+    text-align: center; /* Centrerer teksten inde i titlen */
+}
+
+.content-grid {
+    display: flex; /* Flexbox layout for at organisere child-elementer */
+    flex-direction: column; /* Indholdet arrangeres som en kolonne (lodret) */
+    align-items: center; /* Centrerer alle child-elementer horisontalt */
+    justify-content: center; /* Centrerer alle child-elementer lodret */
+    gap: 2rem; /* Laver afstand på 2rem (32px) mellem hvert child-element */
+}
+
+.video-container {
+    position: relative; /* Gør det muligt at bruge positioneringsregler */
+    padding-bottom: 56.25%; /* Laver en container med et 16:9 aspektforhold (højde/bredde) */
+    height: 0; /* Højde sættes til 0 for at gøre padding-bottom effektiv */
+    width: 100%; /* Fylder hele bredden af forælderen */
+    overflow: hidden; /* Skjuler indhold, der går ud over grænserne */
+}
+
+.video-container video {
+    width: 100%; /* Videoen fylder hele containerens bredde */
+    height: 100%; /* Videoen fylder hele containerens højde */
+}
+
+#kupon-container {
+    display: flex; /* Flexbox layout til at arrangere kuponer side om side */
+    gap: 20px; /* Afstand mellem kuponerne */
+}
+
+.coupon-card-content-new {
+    width: 25vw; /* Bredden på kortet er 25% af viewportens bredde */
+    height: 20vh; /* Højden på kortet er 20% af viewportens højde */
+}
+
+.coupon-card-content-new img {
+    width: 100%; /* Billedet fylder hele kortets bredde */
+    height: 100%; /* Billedet fylder hele kortets højde */
+    object-fit: contain; /* Sørger for, at billedet bevarer sin oprindelige proportion */
+}
+
+
+
+.coupon-kaffe-new, .coupon-mad-new {
+    background-color: #638C3E; /* Grøn baggrund */
+    border-radius: 1rem; /* Runde hjørner på 1rem */
+    padding: 1rem; /* Indvendig polstring */
+    display: flex; /* Flexbox layout for at centrere indholdet */
+    align-items: center; /* Centrerer indholdet vertikalt */
+    justify-content: center; /* Centrerer indholdet horisontalt */
+    width: 40%; /* Bredden på 40% af forælderens bredde */
+    max-width: 180px; /* Maksimal bredde på kortet */
+    height: auto; /* Automatisk højde afhængig af indholdet */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Blød skygge til kortet */
+    transition: transform 0.2s ease; /* Glidende animation, når man hover */
+}
+
+.coupon-kaffe-new img, .coupon-mad-new img {
+    max-width: 80%; /* Billedet kan ikke være bredere end 80% af kortets bredde */
+    height: auto; /* Højden justeres automatisk for at bevare billedets proportion */
+}
+
+
+
+
+.schedule-section-new {
+    display: flex; /* Bruger flexbox layout til at arrangere child-elementer */
+    flex-direction: column; /* Laver en kolonne-layout, hvor elementerne stables lodret */
+    gap: 1.5rem; /* Laver en afstand på 1.5rem mellem børnene */
+    width: 100%; /* Sektionen fylder 100% af forælderens bredde */
+    max-width: 500px; /* Sektionens bredde kan maksimalt være 500px */
+}
+
+.card-new {
+    background-color: #fff; /* Hvid baggrund for kortet */
+    border-radius: 1rem; /* Runde hjørner med en radius på 1rem */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Skyggeeffekt med lav opacitet */
+    padding: 1.5rem; /* Indvendig polstring (plads) omkring indholdet */
+    display: flex; /* Flex layout bruges til at organisere indholdet */
+    flex-direction: column; /* Indholdet placeres i en kolonne inde i kortet */
+    margin-top: 1rem; /* Laver plads over kortet på 1rem */
+}
+
+.card-header-new {
+    display: flex; /* Flexbox layout til at arrangere child-elementerne */
+    align-items: center; /* Centrerer child-elementer lodret */
+    justify-content: space-between; /* Placerer child-elementer i hver sin ende */
+    position: relative; /* Gør det muligt at placere elementer med position absolute */
+    margin-bottom: 1rem; /* Laver plads under headeren */
+}
+
+.card-header-new h3 {
+    margin: 0; /* Fjerner standard margin for h3 */
+    flex-grow: 1; /* Tvinger overskriften til at fylde så meget som muligt */
+    text-align: center; /* Centrerer teksten */
+    font-size: 1.25rem; /* Gør teksten større */
+}
+
+/* Placerer ikonerne i card-header absolut i forhold til dens forælder */
+/* Placerer ikonerne i card-header absolut i forhold til dens forælder */
+.card-header-new .icons-new {
+    position: absolute; /* Absolut positionering i forhold til forælder */
+    right: 1rem; /* Placeres 1rem fra højre kant */
+}
+
+/* Indstilling for ikoner, der vises som en række */
+.icons-new {
+    display: flex; /* Brug Flexbox til at arrangere elementer i en række */
+    gap: 0.5rem; /* Plads mellem ikonerne */
+}
+
+/* Stil for knapperne i ikonområdet */
+.icon-btn {
+    background: none; /* Fjern baggrund */
+    border: none; /* Fjern kantlinje */
+    font-size: 1.5rem; /* Størrelse på ikonet */
+    cursor: pointer; /* Markøren ændres til pointer (hånd) */
+    pointer-events: all; /* Aktiver klikbare elementer */
+}
+
+/* Stil for indholdet af kortet */
+.card-content-new {
+    display: flex; /* Brug Flexbox for kolonneopsætning */
+    flex-direction: column; /* Indholdet stables lodret */
+    gap: 1rem; /* Plads mellem indholdselementer */
+    align-items: center; /* Centrer indholdet horisontalt */
+}
+
+/* Stil for billederne i kortindholdet */
+.card-content-new img {
+    width: 100%; /* Billedet fylder hele bredden af forældrecontaineren */
+    max-width: 8rem; /* Maksimal bredde er 8rem */
+    height: auto; /* Bevar billedets proportioner */
+}
+
+/* Ikoner i kortet */
+.card-icon-new {
+    width: 3rem; /* Fast bredde */
+    height: 3rem; /* Fast højde */
+}
+
+/* Stil for informationsområdet i kortet */
+.card-info-new {
+    display: flex; /* Brug Flexbox til at arrangere informationer i række */
+    flex-direction: row; /* Indholdet arrangeres i vandret række */
+    justify-content: center; /* Centrer informationen */
+    gap: 1rem; /* Plads mellem informationselementer */
+    font-size: 0.9rem; /* Skriftstørrelse */
+    width: 100%; /* Fyld hele forælderens bredde */
+}
+
+/* Stil for tekst i informationsområdet */
+.card-info-new p {
+    background-color: rgba(99, 140, 62, 0.77); /* Baggrundsfarve med gennemsigtighed */
+    color: white; /* Hvid tekstfarve */
+    padding: 0.5rem 1rem; /* Indvendig afstand (top/bund: 0.5rem, venstre/højre: 1rem) */
+    border-radius: 0.5rem; /* Runde hjørner */
+    text-align: center; /* Centrer teksten */
+}
+
+/* Beskrivelse i kortet */
+.card-description-new {
+    font-size: 1rem; /* Skriftstørrelse */
+    margin: 0; /* Ingen ydre margin */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Lodret layout */
+    justify-content: center; /* Centrer indholdet lodret */
+    padding: 1.5rem 2rem; /* Indvendig afstand (top/bund: 1.5rem, venstre/højre: 2rem) */
+    background-color: #638C3E; /* Baggrundsfarve */
+    color: white; /* Tekstfarve */
+    border-radius: 1rem; /* Runde hjørner */
+    width: 100%; /* Fylder hele bredden af forælder */
+}
+
+/* Stil for kortet, der indeholder kortfunktionen */
+#map {
+    height: 40vh; /* Højde på 40% af viewport-højden */
+    width: 100%; /* Fylder hele bredden */
+    margin-top: 1.5rem; /* Plads over kortet */
+}
+
+/* Stil for indholdet af Leaflet-popups */
+.leaflet-popup-content {
+    font-size: 1rem; /* Skriftstørrelse */
+    line-height: 1.4; /* Linjeafstand */
+    max-width: 90%; /* Maksimal bredde på 90% */
+    word-wrap: break-word; /* Teksten brydes, hvis den bliver for lang */
+}
+
+.leaflet-popup-content h2 {
+    font-size: 1.25rem; /* Størrelse på overskrift */
+    margin: 0 0 0.5rem 0; /* Margin i bunden af overskriften */
+}
+
+.leaflet-popup-content p {
+    margin: 0.5rem 0; /* Plads over og under paragrafen */
+}
+
+/* Mediespørgsmål til større skærme */
+@media (min-width: 1024px) {
+    main {
+        max-width: 1500px; /* Maksimal bredde for main-elementet */
+    }
+
+    .schedule-section-new {
+        flex-direction: row; /* Indholdet arrangeres i række */
+        justify-content: space-evenly; /* Lige mellemrum mellem elementer */
+    }
+
+    .coupon-section-new {
+        justify-content: space-evenly; /* Lige mellemrum mellem elementer */
+        gap: 3rem; /* Plads mellem elementer */
+    }
+
+    .card-new {
+        width: 280px; /* Fast bredde på kortet */
+    }
+
+    .logo {
+        position: absolute; /* Absolut position i forhold til forælder */
+        top: 20px; /* Placeres 20px fra toppen */
+        left: 20px; /* Placeres 20px fra venstre */
+        max-width: 150px; /* Maksimal bredde */
+        height: auto; /* Højde tilpasses automatisk */
+        z-index: 1000; /* Placeres over andre elementer */
+    }
+
+    .logo img {
+        width: 100%; /* Billedet fylder 100% af forælderens bredde */
+        height: auto; /* Højden tilpasses billedets proportioner */
+    }
+
+    #opgaver-container, #foredrag-container {
+        display: grid; /* Grid layout */
+        grid-template-columns: repeat(2, 1fr); /* To kolonner med lige bredde */
+        gap: 20px; /* Plads mellem elementer */
+    }
+
+    .coupon-kaffe-new, .coupon-mad-new {
+        background-color: #638C3E; /* Baggrundsfarve */
+        border-radius: 10px; /* Runde hjørner */
+        width: 300px; /* Fast bredde */
+    }
+
+    .schedule-section-new {
+        display: grid; /* Grid layout */
+        grid-template-columns: repeat(2, 1fr); /* To kolonner med lige bredde */
+        gap: 20px; /* Plads mellem elementer */
+    }
+
+    .card-new {
+        background-color: #fff; /* Hvid baggrund */
+        border-radius: 10px; /* Runde hjørner */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Blød skygge */
+        padding: 20px; /* Indvendig afstand */
+        display: flex; /* Flex layout */
+        flex-direction: column; /* Lodret layout */
+        justify-content: space-between; /* Lige mellemrum mellem indhold */
+        width: 300px; /* Fast bredde */
+    }
+
+    .card-header-new {
+        display: flex; /* Flex layout */
+        justify-content: space-between; /* Lige mellemrum mellem elementer */
+        align-items: center; /* Centrer indhold lodret */
+        width: 100%; /* Fylder hele bredden */
+    }
+
+    .card-content-new {
+        display: flex; /* Flex layout */
+        flex-direction: column; /* Lodret layout */
+        gap: 20px; /* Plads mellem elementer */
+    }
+
+    .card-content-new img {
+        width: 100px; /* Fast bredde */
+    }
+
+    .card-info-new {
+        display: flex; /* Flex layout */
+        justify-content: center; /* Centrer indholdet */
+        gap: 50px; /* Plads mellem elementer */
+    }
+
+    .card-info-new p {
+        background-color: rgba(99, 140, 62, 0.77); /* Baggrundsfarve */
+    }
+
+    .card-description-new {
+        background-color: #638C3E; /* Baggrundsfarve */
+        color: white; /* Tekstfarve */
+        padding: 15px 20px; /* Indvendig afstand */
+        text-align: left; /* Juster tekst til venstre */
+    }
+
+    #map {
+        height: 600px; /* Højde */
+    }
+}

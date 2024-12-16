@@ -1,0 +1,9 @@
+<svg width="41" height="46" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="20.5" cy="22.5" r="19" stroke="#638C3E" stroke-width="3"/>
+<circle cx="20.5" cy="12.5" r="2.5" fill="#638C3E"/>
+<mask id="path-3-inside-1_787_773" fill="white">
+<path d="M19.0149 18.2H21.9909V35H19.0149V18.2Z"/>
+</mask>
+<path d="M19.0149 18.2H21.9909V35H19.0149V18.2Z" fill="#638C3E"/>
+<path d="M19.0149 18.2V17.2H18.0149V18.2H19.0149ZM21.9909 18.2H22.9909V17.2H21.9909V18.2ZM21.9909 35V36H22.9909V35H21.9909ZM19.0149 35H18.0149V36H19.0149V35ZM19.0149 19.2H21.9909V17.2H19.0149V19.2ZM20.9909 18.2V35H22.9909V18.2H20.9909ZM21.9909 34H19.0149V36H21.9909V34ZM20.0149 35V18.2H18.0149V35H20.0149Z" fill="#638C3E" mask="url(#path-3-inside-1_787_773)"/>
+</svg>
