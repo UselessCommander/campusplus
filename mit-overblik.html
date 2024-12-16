@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Campus+ Login</title>
+
+    <!-- CSS Resets og styling -->
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/mit-overblik.css">
+
+    <!-- Hovedscript til funktionalitet -->
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/access-control.js" defer></script> <!-- Adgangskontrol -->
+
+    <!-- Clarity script til brugertracking -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pejiajj1eo");
+    </script>
+
+    <!-- Leaflet kortbibliotek (CSS og JS) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Hovedcontainer for heatmap -->
+    <div id="heatmap-container">
+        <main>
+            <!-- Logo i toppen -->
+            <div class="logo">
+                <img src="/assets/logo/Campus+CampusKoege-Logo-groen.png" alt="Campus+ Logo">
+            </div>
+
+            <!-- Hovedindhold -->
+            <section class="content-grid">
+                <!-- Titel -->
+                <h1 class="title">Mit Overblik</h1>
+
+                <!-- Videoafspiller -->
+                <video controls width="640" height="360">
+                    <source src="/assets/video/Campus+ 2024.mp4" type="video/mp4">
+                    Din browser understøtter ikke video-elementet.
+                </video>
+
+                <!-- Sektion til kuponer (kaffe og mad) -->
+                <section class="coupon-section">
+                    <div id="kupon-container">
+                        <!-- Dynamisk genererede kuponer indsættes her -->
+                    </div>
+                </section>
+                
+                <!-- Sektion til opgaver og foredrag -->
+                <section class="schedule-section">
+                    <div id="opgaver-container">
+                        <!-- Dynamisk genererede opgaver vises her -->
+                    </div>
+                
+                    <div id="foredrag-container">
+                        <!-- Dynamisk genererede foredrag vises her -->
+                    </div>
+                </section>
+            </section>
+
+            <!-- Overskrift til standkort -->
+            <h2>Standoversigt</h2>
+            <!-- Kortvisning -->
+            <div id="map"></div>
+        </main>
+    </div>
+
+    <!-- Leaflet kort-script -->
+    <script>
+        // Initialisering af kort med centrum og zoomniveau
+        const map = L.map("map").setView([55.458, 12.183], 15);
+
+        // Tilføj OpenStreetMap tiles som baggrund
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Liste af markører/stands med koordinater og information
+        const stands = [
+            {
+                coords: [55.459, 12.182], // Latitude, Longitude
+                type: "Opgave",
+                title: "Opsætning",
+                description: "Vi bygger scenen til foredrag. Medbring vand, vi sørger for madpakke.",
+                place: "Plads 33"
+            },
+            {
+                coords: [55.457, 12.184],
+                type: "Foredrag",
+                title: "Sygeplejersken",
+                description: "Vil du vide mere om, hvordan det er at være sygeplejerske? Kom og lær mere.",
+                place: "Plads 66"
+            },
+            {
+                coords: [55.460, 12.185],
+                type: "Foredrag",
+                title: "Politibetjenten",
+                description: "Lær om livet som politibetjent, og hvilke udfordringer de møder.",
+                place: "Plads 04"
+            },
+            {
+                coords: [55.4587, 12.1837], 
+                type: "Bod",
+                title: "Mad og Kaffe",
+                description: "Her kan du få mad og kaffe for din billet.",
+                place: "Plads 50"
+            }
+        ];
+
+        // Tilføj markører til kortet og bind popups
+        stands.forEach((stand) => {
+            const marker = L.marker(stand.coords).addTo(map); // Tilføj markør på kortet
+            marker.bindPopup(`
+                <h2>${stand.type}: ${stand.title}</h2>
+                <p>${stand.description}</p>
+                <p><strong>${stand.place}</strong></p>
+            `);
+        });
+    </script>
+</body>
+</html>
